@@ -1,0 +1,73 @@
+<div class="row text-center my-4">
+  <h1>Crear Usuario</h1>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          
+          <form [formGroup]="guitarForm" (ngSubmit)="onSubmit()">
+
+            <div class="mb-3">
+              <label for="brand" class="form-label">Marca</label>
+              <input type="text" class="form-control" [class.is-invalid]="isFieldInvalid('brand')" id="brand"
+                formControlName="brand" placeholder="Ingrese la marca de la guitarra">
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('brand')">
+                {{ getErrorMessage('brand') }}
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="model" class="form-label">Modelo</label>
+              <input type="text" class="form-control" [class.is-invalid]="isFieldInvalid('model')" id="model"
+                formControlName="model" placeholder="Ingrese el modelo">
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('model')">
+                {{ getErrorMessage('model') }}
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="year" class="form-label">Año</label>
+              <input type="year" class="form-control" [class.is-invalid]="isFieldInvalid('year')" id="year"
+                formControlName="year" placeholder="Ingrese año de fabricación">
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('year')">
+                {{ getErrorMessage('year') }}
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="pickup" class="form-label">Configuración de pastillas</label>
+              <select class="form-select" [class.is-invalid]="isFieldInvalid('pickup')" id="pickup" formControlName="pickup_configuration">
+                <option *ngFor="let pickup of pickups" [value]="pickup">{{ pickup }}</option>
+              </select>
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('role')">
+                {{ getErrorMessage('pickup') }}
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="price" class="form-label">Precio</label>
+              <input type="price" class="form-control" [class.is-invalid]="isFieldInvalid('price')" id="price"
+                formControlName="price" placeholder="Ingrese el precio">
+              <div class="invalid-feedback" *ngIf="isFieldInvalid('price')">
+                {{ getErrorMessage('price') }}
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <button type="button" class="btn btn-secondary" (click)="onCancel()" [disabled]="isSubmitting">
+                Cancelar
+              </button>
+              <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+                {{ isSubmitting ? 'Guardando...' : 'Guardar' }}
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

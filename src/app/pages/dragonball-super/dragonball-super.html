@@ -1,0 +1,18 @@
+<h1>DragonBall Page</h1>
+<hr>
+
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <app-character-add
+      (newCharacter)="dragonballService.addCharacter($event)"
+    />
+  </div>
+
+
+  <div class="col-12 col-sm-6">
+    <app-character-list 
+      listName="Titulo Listado desde el Papa",
+      [characters]="dragonballService.characters()"
+    />
+  </div>
+</section> 

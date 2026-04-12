@@ -1,0 +1,63 @@
+<div class="row text-center my-4">
+  <h1>Lista de Guitarras</h1>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-10 text-end">
+      <button class="btn btn-primary" (click)="onAddGuitar()">
+        Agregar Guitarra
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="row">
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Año</th>
+                <th scope="col">Configuración Pastillas</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (guitar of guitars$ | async; let i = $index; track guitar.id) {
+              <tr>
+                <th scope="row">{{ guitar.id }}</th>
+                <td>{{ guitar.brand| titlecase }}</td>
+                <td>{{ guitar.model }}</td>
+                <td>{{ guitar.year }}</td>
+                <td>{{ guitar.pickup_configuration }}</td>
+                <td>${{ guitar.price }}</td>
+                <td class="d-flex gap-2">
+                  <button class="btn btn-warning btn-sm" (click)="onEditGuitar(guitar.id)"
+                    [disabled]="isDeleting() === guitar.id">
+                    Editar
+                  </button>
+                  <button class="btn btn-danger btn-sm" (click)="onDeleteGuitar(guitar.id)"
+                    [disabled]="isDeleting() === guitar.id">
+                    {{ isDeleting() === guitar.id ? 'Eliminando...' : 'Eliminar' }}
+                  </button>
+                </td>
+              </tr>
+              } @empty {
+              <tr>
+                <td colspan="6" class="text-center">No hay usuarios registrados</td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

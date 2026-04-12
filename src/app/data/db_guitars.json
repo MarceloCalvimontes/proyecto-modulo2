@@ -1,0 +1,85 @@
+{
+  "guitars": [
+    {
+      "id": "1",
+      "brand": "Dean",
+      "model": " ML-79",
+      "year": "2015",
+      "price": "899",
+      "pickup_configuration": "HH"
+    },
+    {
+      "id": "2",
+      "brand": "Epiphone",
+      "model": "Epiphone Les Paul Standard 60s",
+      "year": "2020",
+      "price": "699",
+      "pickup_configuration": "HH"
+    },
+    {
+      "id": "3",
+      "brand": "Fender",
+      "model": "Standard Stratocaster",
+      "year": "2025",
+      "price": "599",
+      "pickup_configuration": "SSS"
+    },
+    {
+      "id": "4",
+      "brand": "Gibson",
+      "model": "70s Flying V",
+      "year": "2022",
+      "price": "2499",
+      "pickup_configuration": "HH"
+    },
+    {
+      "id": "5",
+      "brand": "Jackson",
+      "model": "Pro Series Rhoads RRT3",
+      "year": "2010",
+      "price": "1099",
+      "pickup_configuration": "HH"
+    },
+    {
+      "id": "6",
+      "brand": "Jackson",
+      "model": "Pro Series Signature Marty Friedman MF-1 ",
+      "year": "2023",
+      "price": "1699",
+      "pickup_configuration": "HH"
+    },
+    {
+      "id": "7",
+      "brand": "Epiphone",
+      "model": "Tony Iommi SG Special",
+      "year": "2022",
+      "price": "839",
+      "pickup_configuration": "P90"
+    },
+    {
+      "id": "8",
+      "brand": "Ibanez",
+      "model": "ARZ-200",
+      "year": "2012",
+      "price": "400",
+      "pickup_configuration": "HH"
+    },
+    {
+      "id": "9",
+      "brand": "LTD",
+      "model": "MT-130",
+      "year": "2020",
+      "price": "240",
+      "pickup_configuration": "HSH"
+    },
+    {
+      "id": "FsgsaRTV_5g",
+      "brand": "ibanez",
+      "model": "SA260FM",
+      "year": "2024",
+      "pickup_configuration": "HSS",
+      "price": "399"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
